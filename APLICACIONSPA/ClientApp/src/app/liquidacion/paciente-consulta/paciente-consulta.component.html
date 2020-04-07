@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-6">
+    <input [(ngModel)]="searchText" type="text" class="form-control" placeh
+   older="Type to filter">
+    </div>
+    </div>
+    <hr>
+   
+    <table class="table table-striped" *ngIf='paciente && paciente.length'>
+    <thead>
+    <tr>
+    <th scope="col">#</th>
+    <th scope="col">identificación</th>
+    <th scope="col">valorServicio</th>
+    <th scope="col">salario</th>
+    <th scope="col">coPago</th>
+    <th scope="col">tarifa</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let paciente of pacientes; index as i ">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ paciente.identificacion }} </td>
+    <td>{{ paciente.valorServicio }}</td>
+    <td>{{paciente.salario}}</td>
+    <td>{{ paciente.coPago}}</td>
+    <td>{{ paciente.tarifa }}</td>
+    </tr>
+    </tbody>
+</table>
